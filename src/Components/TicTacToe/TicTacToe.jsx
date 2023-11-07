@@ -25,11 +25,14 @@ export const TicTacToe = () => {
     if (lock) {
       return 0
     }
+    // If the count is even, it's player X's turn
     if (count % 2 === 0) {
+      // Update the game cell with an X icon
       e.target.innerHTML = `<img src='${cross_icon}'>`
       data[num] = 'x'
       setCount(++count)
     } else {
+      // If the count is odd, it's player O's turn
       e.target.innerHTML = `<img src='${circle_icon}'>`
       data[num] = 'o'
       setCount(++count)
@@ -38,22 +41,30 @@ export const TicTacToe = () => {
   }
 
   const checkWin = () => {
+    // Check the first row for a win
     if (data[0] === data[1] && data[1] === data[2] && data[2] !== '') {
       won(data[2])
+      // Check the second row for a win
     } else if (data[3] === data[4] && data[4] === data[5] && data[5] !== '') {
       won(data[5])
+      // Check the third row for a win
     } else if (data[6] === data[7] && data[7] === data[8] && data[8] !== '') {
       won(data[8])
+      // Check the first column for a win
     } else if (data[0] === data[3] && data[3] === data[6] && data[6] !== '') {
       won(data[6])
+      // Check the second column for a win
     } else if (data[1] === data[4] && data[4] === data[7] && data[7] !== '') {
       won(data[7])
+      // Check the third column for a win
     } else if (data[2] === data[5] && data[5] === data[8] && data[8] !== '') {
       won(data[8])
+      // Check the left-to-right diagonal for a win
     } else if (data[0] === data[4] && data[4] === data[8] && data[8] !== '') {
       won(data[8])
     } else if (data[0] === data[1] && data[1] === data[2] && data[2] !== '') {
       won(data[2])
+      // Check the right-to-left diagonal for a win
     } else if (data[2] === data[4] && data[4] === data[6] && data[6] !== '') {
       won(data[6])
     }
