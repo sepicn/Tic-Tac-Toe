@@ -1,4 +1,4 @@
-# React Tic Tac Toe 🎮
+# React Tic Tac Toe [Play it here](https://tictactoereact-app.netlify.app/)🎮
 
 Welcome to the React Tic Tac Toe game! It's time for some classic gaming fun! 💫
 
